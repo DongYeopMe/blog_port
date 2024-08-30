@@ -5,6 +5,7 @@ import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import LoginPage from './components/LoginPage';
 import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
