@@ -4,13 +4,14 @@ import App from './App';
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import LoginPage from './components/LoginPage';
+import Home from './components/Home';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <LoginPage/>
+        <Home/>
     </BrowserRouter>
 );
 
