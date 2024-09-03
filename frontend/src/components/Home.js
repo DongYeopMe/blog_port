@@ -14,18 +14,28 @@ function Home(){
                 <div id="blog">
                 </div>
                 <div id="contact">
-
+                    <ul>
+                        <li>Blog</li>
+                        <li>Github</li>
+                        <li>Email</li>
+                        <li>Phone</li>
+                    </ul>
                 </div>
             </div>
 
             <div id = "stacks">
                 <div id = "frame">
-
+                    <span>Spring</span>
+                    <span>React</span>
                 </div>
                 <div id="lang">
-
+                    <span>Java</span>
+                    <span>JavaScript</span>
                 </div>
                 <div id="others">
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
                 </div>
             </div>
@@ -34,3 +44,4 @@ function Home(){
         </div>
     )
 }
+export default Home;
