@@ -1,6 +1,6 @@
 function Footer (){
     return(
-        <footer>
+        <footer >
             <hr />
             푸터 입니다.
         </footer>
