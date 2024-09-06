@@ -28,15 +28,13 @@ function Home(){
                 <div className="border-b-4 border-black w-5/6 p-8">
                     <p>스택</p>
                 </div>
-                <div id = "frame" className="">
-                    <pre>
-                        ― 언어
-                        ┖ Java / JavaScript
-                        ― 프론트,백엔드
-                        ┖ React / Spring Boot / JPA / MySQL / Redis
-                        ― 기타
-                        ┖ AWS / Docker / Git
-                    </pre>
+                <div id="frame" className="h-48 w-5/6 px-8">
+                    <p>― 언어</p>
+                    <p>┖ Java / JavaScript</p>
+                    <p>― 프론트,백엔드</p>
+                    <p>┖ React / Spring Boot / JPA / MySQL / Redis</p>
+                    <p>― 기타</p>
+                    <p>┖ AWS / Docker / Git</p>
                 </div>
             </div>
             <div id ="projects">
