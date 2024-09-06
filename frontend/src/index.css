@@ -7,3 +7,6 @@ body{
     @apply justify-center;
     @apply px-8;
 }
+#intro{
+    @apply py-8;
+}
