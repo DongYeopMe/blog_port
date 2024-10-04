@@ -24,8 +24,8 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <div id = "stacks">
-                <div className="border-b-4 border-black w-5/6 p-8">
+            <div id="stacks" className="pl-4">
+                <div className="border-b-4 border-black w-5/6 ">
                     <p>스택</p>
                 </div>
                 <div id="frame" className="h-48 w-5/6 px-8">

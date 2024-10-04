@@ -1,8 +1,16 @@
 package blog.backend.controller;
 
-public class Postcontroller {
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+import blog.backend.service.PostService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/post")
+public class PostController {
+    private final PostService postService;
+
+    @PostMapping("/")
 }
