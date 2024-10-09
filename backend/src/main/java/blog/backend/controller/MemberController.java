@@ -1,15 +1,35 @@
 package blog.backend.controller;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
-@Slf4j
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/member")
 public class MemberController {
 
-    @GetMapping("/api/hello")
-    public String hello(){
-        return "hi, 데이터 보내기";
+    @PostMapping("/create")
+    public String createMember(){
+        return "member create ok";
+    }
+    @PatchMapping("/update")
+    public String updateMember(){
+        return "Member edit ok";
+    }
+    @GetMapping("/get")
+    public String getMember(){
+        return "get ok";
+    }
+    @GetMapping("/gets")
+    public String getMembers(){
+        return "gets ok";
+    }
+    @DeleteMapping("/delete")
+    public String deleteMember(){
+        return "delete ok";
+    }
+    @DeleteMapping("/deteles")
+    public String deleteMembers(){
+        return "deletes ok";
     }
 }
