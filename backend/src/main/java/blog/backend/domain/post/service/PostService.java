@@ -1,4 +1,4 @@
-package blog.backend.service;
+package blog.backend.domain.post.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package blog.backend.controller;
+package blog.backend.domain.post.controller;
 
-import blog.backend.service.PostService;
+import blog.backend.domain.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,27 +12,27 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping("/create")
-    public String createPost(){
+    public ResponseEntity<Object> createPost(){
         return "post ok";
     }
     @PatchMapping("/update")
-    public String updatePost(){
+    public ResponseEntity<Object> updatePost(){
         return "edit ok";
     }
     @GetMapping("/get")
-    public String getPost(){
+    public ResponseEntity<Object> getPost(){
         return "get ok";
     }
     @GetMapping("/gets")
-    public String getPosts(){
+    public ResponseEntity<Object> getPosts(){
         return "gets ok";
     }
     @DeleteMapping("/delete")
-    public String deletePost(){
+    public ResponseEntity<Object> deletePost(){
         return "delete ok";
     }
     @DeleteMapping("/deteles")
-    public String deletePosts(){
+    public ResponseEntity<Object> deletePosts(){
         return "deletes ok";
     }
 }
