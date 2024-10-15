@@ -28,4 +28,8 @@ public class MemberService {
         Member findmember = memberRepository.findByUserIdORUserName(findMemberRequirements.getUsername(), findMemberRequirements.getUsername());
         return MemberResponse.memberConvert(findmember);
     }
+    public void deleteMember(FindMemberRequirements findMemberRequirements){
+        Member findmember = memberRepository.findByUserIdORUserName(findMemberRequirements.getUsername(), findMemberRequirements.getUsername());
+        memberRepository.delete(findmember);
+    }
 }

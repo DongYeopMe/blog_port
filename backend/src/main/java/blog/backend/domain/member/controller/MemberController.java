@@ -34,16 +34,8 @@ public class MemberController {
         MemberResponse memberResponse = memberService.getMember(findMemberRequirements);
         return ResponseEntity.ok(ResultResponse.of(GET_MEMBER,memberResponse));
     }
-    @GetMapping("/gets")
-    public ResponseEntity<Object> getMembers(){
-        return "gets ok";
-    }
     @DeleteMapping("/delete")
     public ResponseEntity<Object> deleteMember(){
-        return "delete ok";
-    }
-    @DeleteMapping("/deteles")
-    public ResponseEntity<Object> deleteMembers(){
-        return "deletes ok";
+        return ResponseEntity.ok(ResultResponse.of(DELETE_SUCCESS,true));
     }
 }
