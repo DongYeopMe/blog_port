@@ -9,8 +9,8 @@ public class ResultResponse {
     private Object data;
 
     public ResultResponse(ResultCode resultCode,Object data) {
-        this.status = resultCode.getStatus();
-        this.message = resultCode.getMessage();
+        this.status = resultCode.getCode();
+        this.message = resultCode.getMemssage();
         this.data = data;
     }
 

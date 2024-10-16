@@ -1,14 +1,12 @@
 package blog.backend.domain.post.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
 @Setter
 @Getter
 @NoArgsConstructor
@@ -20,6 +18,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String category;
+
     private String title;
     @Lob
     private String markdownContent;
@@ -27,4 +27,7 @@ public class Post {
     private String htmlContent;
 
     private LocalDateTime createAt;
+
+    @OneToMany
+    private String userId;
 }
