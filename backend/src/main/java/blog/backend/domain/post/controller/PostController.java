@@ -1,10 +1,13 @@
 package blog.backend.domain.post.controller;
 
+import blog.backend.domain.post.dto.PostGetconditions;
 import blog.backend.domain.post.dto.PostRequest;
-import blog.backend.domain.post.entity.Post;
+import blog.backend.domain.post.dto.PostResponse;
 import blog.backend.domain.post.service.PostService;
 import blog.backend.global.ResultResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,18 +31,20 @@ public class PostController {
     }
     @GetMapping("/get")
     public ResponseEntity<Object> getPost(String title){
-        Post response = postService.getPost(title);
+        PostResponse response = postService.getPost(title);
+        return ResponseEntity.ok(ResultResponse.of(GET_POST_SUCCESS,response));
     }
     @GetMapping("/gets")
-    public ResponseEntity<Object> getPosts(){
-        return "gets ok";
+    public ResponseEntity<Object> getPosts(@RequestParam(value = "page", defaultValue = "1") int page,
+                                           @RequestParam(value = "size", defaultValue = "10") int size,
+                                           PostGetconditions postGetconditions){
+        Page<PostResponse> response = postService.getPosts(page,size, postGetconditions);
+
+        return ResponseEntity.ok(ResultResponse.of(GET_POSTS_SUCCESS,response));
     }
     @DeleteMapping("/delete")
-    public ResponseEntity<Object> deletePost(){
-        return "delete ok";
-    }
-    @DeleteMapping("/deteles")
-    public ResponseEntity<Object> deletePosts(){
-        return "deletes ok";
+    public ResponseEntity<Object> deletePost(String title){
+        postService.deletePost(title);
+        return ResponseEntity.ok(ResultResponse.of(POST_DELETE_SUCCESS,true));;
     }
 }

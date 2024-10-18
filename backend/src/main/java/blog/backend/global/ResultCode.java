@@ -12,7 +12,10 @@ public enum ResultCode {
     DELETE_SUCCESS(200,"회원 삭제 완료"),
     GET_MEMBER(200,"유저 가져오기 완료됐습니다."),
 
-    POSTING_SUCCESS(200,"포스팅 완료했습니다.");
+    POSTING_SUCCESS(200,"포스팅 완료했습니다."),
+    GET_POST_SUCCESS(200,"게시글 가져오기 완료됐습니다." ),
+    GET_POSTS_SUCCESS(200,"게시글 페이지 가져오기 완료됐습니다." ),
+    POST_DELETE_SUCCESS(200,"게시글 정상적으로 삭제 완료되었습니다." );
 
 
 

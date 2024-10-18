@@ -1,11 +1,17 @@
 package blog.backend.domain.post.service;
 
+import blog.backend.domain.post.dto.PostGetconditions;
 import blog.backend.domain.post.dto.PostRequest;
 import blog.backend.domain.post.dto.PostResponse;
 import blog.backend.domain.post.entity.Post;
 import blog.backend.domain.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 import org.springframework.stereotype.Service;
+
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +30,20 @@ public class PostService {
     }
 
     public PostResponse getPost(String title) {
+        Post findpost = postRepository.findByTitle(title);
+        return PostResponse.convertToResponse(findpost);
+    }
 
+    public Page<PostResponse> getPosts(int page, int size, PostGetconditions postGetconditions) {
+        final Pageable pageable = PageRequest.of(page,size);
+        Page<Post> posts = postRepository.findByPosts(postGetconditions,pageable);
+        Page<PostResponse> response = posts.map(PostResponse::convertToResponse);
+
+        return response;
+    }
+
+    public void deletePost(String title) {
+        Post findpost = postRepository.findByTitle(title);
+        postRepository.delete(findpost);
     }
 }
