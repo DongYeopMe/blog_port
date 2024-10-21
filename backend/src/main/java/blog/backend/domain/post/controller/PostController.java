@@ -1,6 +1,6 @@
 package blog.backend.domain.post.controller;
 
-import blog.backend.domain.post.dto.PostGetconditions;
+import blog.backend.domain.post.dto.PostGetConditions;
 import blog.backend.domain.post.dto.PostRequest;
 import blog.backend.domain.post.dto.PostResponse;
 import blog.backend.domain.post.service.PostService;
@@ -17,6 +17,7 @@ import static blog.backend.global.ResultCode.*;
 @RequiredArgsConstructor
 @RequestMapping("/post")
 public class PostController {
+
     private final PostService postService;
 
     @PostMapping("/create")
@@ -37,7 +38,7 @@ public class PostController {
     @GetMapping("/gets")
     public ResponseEntity<Object> getPosts(@RequestParam(value = "page", defaultValue = "1") int page,
                                            @RequestParam(value = "size", defaultValue = "10") int size,
-                                           PostGetconditions postGetconditions){
+                                           PostGetConditions postGetconditions){
         Page<PostResponse> response = postService.getPosts(page,size, postGetconditions);
 
         return ResponseEntity.ok(ResultResponse.of(GET_POSTS_SUCCESS,response));
@@ -45,6 +46,6 @@ public class PostController {
     @DeleteMapping("/delete")
     public ResponseEntity<Object> deletePost(String title){
         postService.deletePost(title);
-        return ResponseEntity.ok(ResultResponse.of(POST_DELETE_SUCCESS,true));;
+        return ResponseEntity.ok(ResultResponse.of(POST_DELETE_SUCCESS,true));
     }
 }

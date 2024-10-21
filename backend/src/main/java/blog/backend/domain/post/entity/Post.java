@@ -1,5 +1,6 @@
 package blog.backend.domain.post.entity;
 
+import blog.backend.domain.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,6 +29,7 @@ public class Post {
 
     private LocalDateTime createAt;
 
-    @OneToMany
-    private String userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Member user;
 }

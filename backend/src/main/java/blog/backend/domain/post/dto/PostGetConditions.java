@@ -2,10 +2,12 @@ package blog.backend.domain.post.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
-public class PostGetconditions {
+public class PostGetConditions {
 
     private String userid;
     private String category;

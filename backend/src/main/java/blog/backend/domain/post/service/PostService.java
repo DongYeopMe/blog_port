@@ -1,6 +1,6 @@
 package blog.backend.domain.post.service;
 
-import blog.backend.domain.post.dto.PostGetconditions;
+import blog.backend.domain.post.dto.PostGetConditions;
 import blog.backend.domain.post.dto.PostRequest;
 import blog.backend.domain.post.dto.PostResponse;
 import blog.backend.domain.post.entity.Post;
@@ -34,9 +34,12 @@ public class PostService {
         return PostResponse.convertToResponse(findpost);
     }
 
-    public Page<PostResponse> getPosts(int page, int size, PostGetconditions postGetconditions) {
+    public Page<PostResponse> getPosts(int page, int size, PostGetConditions postGetconditions) {
         final Pageable pageable = PageRequest.of(page,size);
-        Page<Post> posts = postRepository.findByPosts(postGetconditions,pageable);
+        Page<Post> posts = postRepository.findByPosts(postGetconditions.getCategory(),
+                postGetconditions.getCategory(),
+                postGetconditions.getSearch(),
+                pageable);
         Page<PostResponse> response = posts.map(PostResponse::convertToResponse);
 
         return response;
