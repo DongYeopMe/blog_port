@@ -15,14 +15,8 @@ public interface PostRepository extends JpaRepository<Post,Long> {
     Post findByTitle(@Param("title") String title);
 
 
-    @Query("SELECT p FROM Post p " +
-            "WHERE (:userid IS NULL OR p.userid = :userid) " +
-            "AND (:category IS NULL OR p.category = :category) " +
-            "AND (:search IS NULL OR p.title LIKE CONCAT('%', :search, '%') OR p.content LIKE CONCAT('%', :search, '%'))")
-    Page<Post> findByPosts(@Param("userid") String userid,
-                           @Param("category") String category,
-                           @Param("search") String search,
+    @Query("SELECT p FROM Post p WHERE (:category IS NULL OR p.category = :category)")
+    Page<Post> findByPosts(@Param("category") String category,
                            Pageable pageable);
-
 
 }

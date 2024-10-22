@@ -36,10 +36,7 @@ public class PostService {
 
     public Page<PostResponse> getPosts(int page, int size, PostGetConditions postGetconditions) {
         final Pageable pageable = PageRequest.of(page,size);
-        Page<Post> posts = postRepository.findByPosts(postGetconditions.getCategory(),
-                postGetconditions.getCategory(),
-                postGetconditions.getSearch(),
-                pageable);
+        Page<Post> posts = postRepository.findByPosts(postGetconditions.getCategory(), pageable);
         Page<PostResponse> response = posts.map(PostResponse::convertToResponse);
 
         return response;

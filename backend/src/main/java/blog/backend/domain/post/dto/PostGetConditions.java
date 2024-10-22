@@ -9,8 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PostGetConditions {
 
-    private String userid;
     private String category;
-    private String search;
 
 }
