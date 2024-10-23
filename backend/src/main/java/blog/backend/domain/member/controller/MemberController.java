@@ -20,17 +20,17 @@ public class MemberController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<Object> createMember(MemberRequest memberRequest){
+    public ResponseEntity<Object> createMember(@RequestBody MemberRequest memberRequest){
         memberService.createMember(memberRequest);
         return ResponseEntity.ok(ResultResponse.of(SIGNUP_SUCCESS,true));
     }
     @PatchMapping("/update")
-    public ResponseEntity<Object> updateMember(MemberRequest memberRequest){
+    public ResponseEntity<Object> updateMember(@RequestBody MemberRequest memberRequest){
         memberService.editMember(memberRequest);
         return ResponseEntity.ok(ResultResponse.of(UPDATE_SUCCESS,true));
     }
     @GetMapping("/get")
-    public ResponseEntity<Object> getMember(FindMemberRequirements findMemberRequirements){
+    public ResponseEntity<Object> getMember(@RequestBody FindMemberRequirements findMemberRequirements){
         MemberResponse memberResponse = memberService.getMember(findMemberRequirements);
         return ResponseEntity.ok(ResultResponse.of(GET_MEMBER,memberResponse));
     }

@@ -21,30 +21,30 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping("/create")
-    public ResponseEntity<Object> createPost(PostRequest postRequest){
+    public ResponseEntity<Object> createPost(@RequestBody PostRequest postRequest){
         postService.posting(postRequest);
         return ResponseEntity.ok(ResultResponse.of(POSTING_SUCCESS,true));
     }
     @PatchMapping("/update")
-    public ResponseEntity<Object> updatePost(String userID,PostRequest postRequest){
+    public ResponseEntity<Object> updatePost(@RequestBody String userID,PostRequest postRequest){
         postService.update(postRequest);
         return ResponseEntity.ok(ResultResponse.of(POSTING_SUCCESS,true));
     }
     @GetMapping("/get")
-    public ResponseEntity<Object> getPost(String title){
+    public ResponseEntity<Object> getPost(@RequestBody String title){
         PostResponse response = postService.getPost(title);
         return ResponseEntity.ok(ResultResponse.of(GET_POST_SUCCESS,response));
     }
     @GetMapping("/gets")
     public ResponseEntity<Object> getPosts(@RequestParam(value = "page", defaultValue = "1") int page,
                                            @RequestParam(value = "size", defaultValue = "10") int size,
-                                           PostGetConditions postGetconditions){
+                                           @RequestBody PostGetConditions postGetconditions){
         Page<PostResponse> response = postService.getPosts(page,size, postGetconditions);
 
         return ResponseEntity.ok(ResultResponse.of(GET_POSTS_SUCCESS,response));
     }
     @DeleteMapping("/delete")
-    public ResponseEntity<Object> deletePost(String title){
+    public ResponseEntity<Object> deletePost(@RequestBody String title){
         postService.deletePost(title);
         return ResponseEntity.ok(ResultResponse.of(POST_DELETE_SUCCESS,true));
     }
