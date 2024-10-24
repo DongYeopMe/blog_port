@@ -43,10 +43,10 @@ jobs:
     
     - uses: mirromutth/mysql-action@v1.1
       with:
-        host port: 3306
-        container port: 3306
-        mysql database: jdbc:mysql://localhost:3306/blog?&serverTimezone=Asia/Seoul
-        mysql root password: thrmEkel123!
+        host-port: 3306
+        container-port: 3306
+        mysql-database: blog
+        mysql-root-password: thrmEkel123!
       
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
