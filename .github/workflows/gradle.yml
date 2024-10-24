@@ -36,10 +36,6 @@ jobs:
 
     - name: Give Gradle wrapper execute permission
       run: chmod +x ./backend/gradlew  # gradlew 파일에 실행 권한 부여
-      
-    - name: Build backend
-      working-directory: ./backend  # Gradle이 위치한 디렉토리 지정
-      run: ./gradlew build
     
     - uses: mirromutth/mysql-action@v1.1
       with:
@@ -47,8 +43,20 @@ jobs:
         container-port: 3306
         mysql-database: blog
         mysql-root-password: thrmEkel123!
-      
 
+    - name: Wait for MySQL to be ready
+      run: |
+        for i in {1..30}; do
+        if echo 'SELECT 1' | mysql -h 127.0.0.1 -P 3306 -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }}; then
+        break
+        fi
+        echo "Waiting for MySQL..."
+        sleep 5
+        done
+    
+    - name: Build backend
+      working-directory: ./backend  # Gradle이 위치한 디렉토리 지정
+      run: ./gradlew build
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
