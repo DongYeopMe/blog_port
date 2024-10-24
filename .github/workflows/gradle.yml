@@ -41,16 +41,12 @@ jobs:
       working-directory: ./backend  # Gradle이 위치한 디렉토리 지정
       run: ./gradlew build
     
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-         MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-         MYSQL_DATABASE: ${{ secrets.MYSQL_BOARDTEST_DATABASE_NAME }}
-         MYSQL_USER: ${{ secrets.MYSQL_USER_NAME }}
-         MYSQL_PASSWORD: ${{ secrets.MYSQL_USER_PASSWORD }}
-        ports:
-          - 3306:3306
+    - uses: mirromutth/mysql-action@v1.1
+      with:
+        host port: 3306
+        container port: 3306
+        mysql database: ${{ secrets.MYSQL_BOARDTEST_DATABASE_NAME }}
+        mysql root password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
       
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
