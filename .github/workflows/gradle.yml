@@ -53,10 +53,7 @@ jobs:
         echo "Waiting for MySQL..."
         sleep 5
         done
-    
-    - name: Build backend
-      working-directory: ./backend  # Gradle이 위치한 디렉토리 지정
-      run: ./gradlew build
+
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
