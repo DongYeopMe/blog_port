@@ -1,16 +1,14 @@
-import Header from "../layouts/Header"
-import Footer from "../layouts/Footer"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 import React from "react"
 
 const Layout = (props) => {
     return (
-        <div>
+        <div className="h-lvh">
             <Header />
-
-            <main>
+            <main className="container mx-auto flex flex-col p-2 sm:p-4 md:flex-row">
                 {props.children}
             </main>
-
             <Footer />
         </div>
     )

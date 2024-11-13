@@ -2,11 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply min-h-screen;
-    @apply justify-center;
-    @apply px-8;
-}
-#intro{
-    @apply py-8;
-}

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Introduction from './pages/Introduction';
 function App() {
-  const [hidata, setHello] = useState('')
-
-  useEffect(() => {
-    axios.get('http://localhost:8080/api/hello')
-      .then(response => setHello(response.data))
-      .catch(error => console.log(error))
-  }, []);
+  const [isLoading,setIsLoading] = useState(true);
 
   return (
-    <div>
-      백엔드 스프링 부트 데이터 : {hidata}
-    </div>
+    <>
+      <Layout>
+      <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path='/introduction' element={<Introduction/>}/>
+      </Routes>
+      </Layout>
+    </>
   );
 }
 
