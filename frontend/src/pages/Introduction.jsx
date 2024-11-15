@@ -4,7 +4,7 @@ const Introduction = () => {
 
 
     return (
-        <div id="container" className="min-w-full border-4 flex flex-col ">
+        <div id="container" className="border-4 flex flex-col w-full">
             <section id="introduce " className="h-48 grid content-center p-4">
                 <div id="head" className="flex justify-start h-48 px-4">
                     <div className="p-4">
