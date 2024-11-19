@@ -4,10 +4,10 @@ const Introduction = () => {
 
     return (
         <div id="container" className="border-4 flex flex-col w-full">
-            <section id="introduce " className="h-48 grid content-center p-4">
+            <section id="introduce " className="h-60 grid content-center p-4">
                 <div id="head" className="flex justify-start h-48 px-4">
                     <div className="p-4">
-                        <img src={profile} className="size-40 m-2"/>
+                        <img src={profile} className="size-40"/>
                     </div>
                     <div className="p-7 flex flex-col w-full gap-4">
                         <pre className="font-sans text-base ">

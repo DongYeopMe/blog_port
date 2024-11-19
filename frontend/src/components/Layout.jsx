@@ -8,11 +8,12 @@ const Layout = (props) => {
     const categories = [
         { id: 1, name: "홈", emozi: "📖",path: "/" },
         { id: 2, name: "소개", emozi: "📖",path: "/introduction" },
-        { id: 3, name: "TIL", emozi: "📖",path: "/category/til" },
+        { id: 7, name: "전체",emozi: "🏨", path: "/all"},
+        { id: 3, name: "TIL", emozi: "📖",path: "/TodayLearn" },
         { id: 4, name: "Front", emozi: "📲", path: "/category/front" },
         { id: 5, name: "Back",emozi: "🗃️", path: "/category/back" },
         { id: 6, name: "Dev",emozi: "🎫", path: "/category/dev" },
-        { id: 7, name: "Voca",emozi: "🏨", path: "/category/voca" },
+        
     ];
     return (
         <div className="relative bg-neutral-50/30">
@@ -24,7 +25,7 @@ const Layout = (props) => {
                             <Link
                             key={categories.id}
                             to={categories.path}
-                            className=" flex  
+                            className=" flex
                             font-bold text-sm whitespace-nowrap
                             ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none
                             rounded-md h-10 px-4 py-3 disabled:pointer-events-none disabled:opacity-50 transition-colors">

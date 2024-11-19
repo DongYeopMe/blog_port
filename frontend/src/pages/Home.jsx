@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Home(){
 
     return (
-        <div>test</div>
+        <div>간단한 홈</div>
     )
 }
 export default Home;
