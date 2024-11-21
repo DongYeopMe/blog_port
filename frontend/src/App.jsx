@@ -5,10 +5,63 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Introduction from './pages/Introduction';
 import TodayLearn from './pages/TodayLearn'
+import PostPage from './pages/PostPage'
 const mockData = [{
     id: 1,
-    title: "Understanding Closures in JavaScript",
-    content: "Closures are a powerful feature in JavaScript...",
+    title: "제발 이거 클릭",
+    content: `# Markdown Test Document
+
+## Introduction
+
+This is a **Markdown** document to test various features of Markdown rendering. Below are some examples of headers, lists, links, tables, and other elements.
+
+---
+
+## Headers
+
+### H3 Header
+#### H4 Header
+##### H5 Header
+
+---
+
+## Text Formatting
+
+- **Bold text**
+- *Italic text*
+- ~~Strikethrough text~~
+
+> "This is a blockquote. Markdown is simple yet powerful!"
+
+---
+
+## Links and Images
+
+### Links
+- [Google](https://www.google.com)
+- [Markdown Guide](https://www.markdownguide.org)
+
+### Images
+![Sample Image](https://via.placeholder.com/300x150)
+
+---
+
+## Lists
+
+### Unordered List
+- Item 1
+    - Sub-item 1.1
+    - Sub-item 1.2
+- Item 2
+- Item 3
+
+### Ordered List
+1. First Item
+2. Second Item
+    1. Sub-item 2.1
+    2. Sub-item 2.2
+3. Third Item
+`,
     created_At: "2024-11-14T10:00:00Z",
     category: "TIL",
     description: "Learn how closures work and why they're useful.",
@@ -124,6 +177,8 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path='/introduction' element={<Introduction/>}/>
           <Route path='/TodayLearn' element={<TodayLearn/>}/>
+          <Route path='TodayLearn/post/:title' element={<PostPage/>}/>
+          
         </Routes>
       </Layout>
     </postStateContext.Provider>

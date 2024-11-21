@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Post from "../components/Post"
+import Viewer from "../components/Viewer"
 import { postStateContext } from '../App'; // Context import
 import { useContext, useState } from "react";
 
@@ -19,11 +19,12 @@ const TodayLearn = () =>{
         <main className="flex flex-col mb-4 mt-2 gap-2">
             <h1 className="text-center text-5xl">📖 TIL</h1>
             {data.map((post)=>(
-            <Post
+            <Viewer
             key={post.id}
-            title={post.title} 
+            title={post.title}
+            content={post.content} 
             description={post.description} 
-            created_At = {post.created_At}></Post>
+            created_At = {post.created_At}></Viewer>
            ))}
         </main>
     );
