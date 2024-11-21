@@ -17,7 +17,7 @@ const TodayLearn = () =>{
 
     return (
         <main className="flex flex-col mb-4 mt-2 gap-2">
-            <h1 className="text-center">TIL</h1>
+            <h1 className="text-center text-5xl">📖 TIL</h1>
             {data.map((post)=>(
             <Post
             key={post.id}
