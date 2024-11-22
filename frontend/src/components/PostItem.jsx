@@ -3,12 +3,6 @@ import ReactMarkdown from "react-markdown";
 
 
 const PostItem = ({title,content,create_At,category}) =>{
-const mockContent = `
-    # Hello World
-    This is a **Markdown** example with:
-    - Bullet points
-    - Links [Google](https://google.com)
-    `;
 
 
     return (
@@ -19,7 +13,7 @@ const mockContent = `
                     <p className="text-sm font-light text-right my-8">{create_At}</p>
                 </header>
                 <article className="flex flex-row-reverse">
-                    <aside className="ml-12 w-auto">
+                    <aside className="ml-12 w-64">
                         <div className="inline-block">
                             <ul className="">
                                 <li>여러가지</li>
