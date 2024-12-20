@@ -24,7 +24,7 @@ public class PostRequest {
     @Builder
     public Post convertPost(PostRequest postRequest){
         return Post.builder()
-                .title(postRequest.category)
+                .category(postRequest.category)
                 .title(postRequest.title)
                 .markdownContent(postRequest.markdownContent)
                 .build();
