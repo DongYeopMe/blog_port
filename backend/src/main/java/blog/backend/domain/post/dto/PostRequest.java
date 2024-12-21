@@ -15,10 +15,13 @@ public class PostRequest {
 
     private String markdownContent;
 
-    public PostRequest(String category, String title, String markdownContent) {
+    private String username;
+
+    public PostRequest(String category, String title, String markdownContent ,String username) {
         this.category = category;
         this.title = title;
         this.markdownContent = markdownContent;
+        this.username= username;
     }
 
     @Builder
@@ -27,6 +30,7 @@ public class PostRequest {
                 .category(postRequest.category)
                 .title(postRequest.title)
                 .markdownContent(postRequest.markdownContent)
+                .username(postRequest.username)
                 .build();
     }
 }

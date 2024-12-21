@@ -11,4 +11,6 @@ public class PostGetConditions {
 
     private String category;
 
+    private String username;
+
 }

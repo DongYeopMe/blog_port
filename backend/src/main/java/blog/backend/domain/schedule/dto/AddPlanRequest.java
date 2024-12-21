@@ -23,6 +23,7 @@ public class AddPlanRequest {
 
     private LocalDateTime endDate;
 
+    private String username;
     @Builder
     public Schedule convertSchedule(AddPlanRequest addPlanRequest){
         return Schedule.builder()
@@ -31,6 +32,7 @@ public class AddPlanRequest {
                 .color(addPlanRequest.color)
                 .startDate(addPlanRequest.startDate)
                 .endDate(addPlanRequest.endDate)
+                .username(addPlanRequest.username)
                 .build();
     }
 }

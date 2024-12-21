@@ -21,6 +21,8 @@ public class EditPlanRequest {
 
     private LocalDateTime endDate;
 
+    private String username;
+
     @Builder
     public Schedule convertSchedule(EditPlanRequest editPlanRequest){
         return Schedule.builder()
@@ -29,6 +31,7 @@ public class EditPlanRequest {
                 .color(editPlanRequest.color)
                 .startDate(editPlanRequest.startDate)
                 .endDate(editPlanRequest.endDate)
+                .username(editPlanRequest.username)
                 .build();
     }
 

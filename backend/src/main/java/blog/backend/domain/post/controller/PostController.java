@@ -26,7 +26,7 @@ public class PostController {
         return ResponseEntity.ok(ResultResponse.of(POSTING_SUCCESS,true));
     }
     @PatchMapping("/update")
-    public ResponseEntity<Object> updatePost(@RequestBody String userID,PostRequest postRequest){
+    public ResponseEntity<Object> updatePost(@RequestBody PostRequest postRequest){
         postService.update(postRequest);
         return ResponseEntity.ok(ResultResponse.of(POSTING_SUCCESS,true));
     }

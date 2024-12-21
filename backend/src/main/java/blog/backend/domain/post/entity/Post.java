@@ -31,7 +31,6 @@ public class Post {
     private String htmlContent;
     @Column(name="post_createAt", nullable = false)
     private LocalDateTime createAt;
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Member user;
+    @Column(name="member_username", nullable = false)
+    private String username;
 }

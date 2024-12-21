@@ -14,4 +14,6 @@ public class PostEditResponse {
     private String markdownContent;
 
     private String htmlContent;
+
+    private String username;
 }

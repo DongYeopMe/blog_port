@@ -28,7 +28,6 @@ public class Schedule {
     private LocalDateTime startDate;
     @Column(name="schedule_endDate", nullable = false)
     private LocalDateTime endDate;
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Member user;
+    @Column(name="member_username", nullable = false)
+    private String username;
 }
