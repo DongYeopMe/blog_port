@@ -23,7 +23,6 @@ public class Member {
     @Column(name="member_username", nullable = false)
     private String username;
 
-
     public static Member requestConvert(MemberRequest memberRequest){
         return Member.builder()
                 .userid(memberRequest.getUserid())
