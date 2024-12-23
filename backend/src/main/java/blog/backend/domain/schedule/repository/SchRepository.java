@@ -12,4 +12,6 @@ import java.util.List;
 public interface SchRepository extends JpaRepository<Schedule,Long> {
     @Query("SELECT s FROM Schedule s WHERE YEAR(s.startDate) = :year AND MONTH(s.startDate) = :month")
     List<Schedule> findByYearAndMonth(@Param("year") int year, @Param("month") int month);
+
+
 }

@@ -31,7 +31,7 @@ public class PostController {
         return ResponseEntity.ok(ResultResponse.of(POSTING_SUCCESS,true));
     }
     @GetMapping("/get")
-    public ResponseEntity<Object> getPost(@RequestBody String title){
+    public ResponseEntity<Object> getPost(@RequestParam String title){
         PostResponse response = postService.getPost(title);
         return ResponseEntity.ok(ResultResponse.of(GET_POST_SUCCESS,response));
     }

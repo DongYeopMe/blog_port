@@ -30,8 +30,9 @@ public class SchController {
         return ResponseEntity.ok(ResultResponse.of(SCHEDULE_CREATE_SUCCESS,true));
     }
     @PatchMapping("/edit")
-    public String editPlan(EditPlanRequest editPlanRequest){
-        return "test 완";
+    public ResponseEntity<ResultResponse> editPlan(@RequestBody EditPlanRequest editPlanRequest){
+        schService.editPlan(editPlanRequest);
+        return ResponseEntity.ok(ResultResponse.of(SCHEDULE_EDIT_SUCCESS,true));
     }
     @GetMapping("/getPlans")
     public ResponseEntity<ResultResponse> getPlans(@RequestParam int year,

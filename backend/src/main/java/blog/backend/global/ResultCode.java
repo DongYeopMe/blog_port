@@ -18,6 +18,7 @@ public enum ResultCode {
     POST_DELETE_SUCCESS(200,"게시글 정상적으로 삭제 완료되었습니다." ),
 
     SCHEDULE_CREATE_SUCCESS(200,"일정 추가 성공했습니다."),
+    SCHEDULE_EDIT_SUCCESS(200,"일정 수정 성공했습니다."),
     GET_SCHEDULES_SUCCESS(200,"일정 가져오기 성공했습니다.");
 
 
