@@ -6,6 +6,8 @@ import blog.backend.domain.schedule.entity.Schedule;
 import blog.backend.domain.schedule.repository.SchRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SchService {
     private final SchRepository schRepository;
-
     @Transactional
     public void createPlan(AddPlanRequest addPlanRequest) {
         schRepository.save(addPlanRequest.convertSchedule(addPlanRequest));
