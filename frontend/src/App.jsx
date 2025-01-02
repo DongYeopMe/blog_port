@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Introduction from './pages/Introduction';
 import TodayLearn from './pages/TodayLearn'
 import PostPage from './pages/PostPage'
+import Calendar from './pages/CalendarPage.jsx';
 const mockData = [{
     id: 1,
     title: "제발 이거 클릭",
@@ -177,8 +178,8 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path='/introduction' element={<Introduction/>}/>
           <Route path='/TodayLearn' element={<TodayLearn/>}/>
-          <Route path='TodayLearn/post/:title' element={<PostPage/>}/>
-          
+          <Route path='/TodayLearn/post/:title' element={<PostPage/>}/>
+          <Route path="/Calendar" element={<Calendar/>}/>
         </Routes>
       </Layout>
     </postStateContext.Provider>

@@ -12,7 +12,7 @@ const Layout = (props) => {
         { id: 3, name: "TIL", emozi: "📖",path: "/TodayLearn" },
         { id: 4, name: "Front", emozi: "📲", path: "/category/front" },
         { id: 5, name: "Back",emozi: "🗃️", path: "/category/back" },
-        { id: 6, name: "Dev",emozi: "🎫", path: "/category/dev" },
+        { id: 6, name: "Calendar",emozi: "🎫", path: "/calendar" },
         
     ];
     return (
